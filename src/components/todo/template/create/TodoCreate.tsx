@@ -75,8 +75,8 @@ const TodoCreate = ({
   const handleToggle = () => setOpen(!open);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setValue(e.target.value);
-  const onChange = (date: any, dateString: string) => {
-    console.log(dateString);
+
+  const onChange = (date: moment.Moment | null, dateString: string) => {
     setDueDate(dateString);
   };
 

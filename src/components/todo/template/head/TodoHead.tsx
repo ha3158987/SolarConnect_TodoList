@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
+interface IdateInfo {
+  day: string | null;
+  date: string | null;
+  year: number | null;
+}
+
 const TodoHeadBlock = styled.div`
   display: flex;
   justify-content: center;
@@ -22,13 +28,13 @@ const DayText = styled.div`
 `;
 
 const TodoHead = () => {
-  const [dateInfo, setDateInfo] = useState<any>({
+  const [dateInfo, setDateInfo] = useState<IdateInfo>({
     day: null,
     date: null,
     year: null,
   });
 
-  const getMonth = (today: any) => {
+  const getMonth = (today: Date) => {
     const option: { month: "long" } = { month: "long" };
     return new Intl.DateTimeFormat("en-US", option).format(today);
   };
