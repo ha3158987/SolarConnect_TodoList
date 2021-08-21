@@ -4,6 +4,7 @@ export type Itodo = {
   id: number;
   text: string;
   done: boolean;
+  due: string;
 };
 
 let initialTodos: Itodo[] = [];
